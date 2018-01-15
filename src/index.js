@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
-import './index.css';
+import './static/index.less';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
