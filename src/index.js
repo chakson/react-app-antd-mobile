@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
-import './static/index.less';
-import App from './App';
+import './static/common.less';
+import HomePage from './containers/HomePage';
 import registerServiceWorker from './registerServiceWorker';
 
 const history = createHistory();
@@ -24,7 +24,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
     </ConnectedRouter>
   </Provider>
