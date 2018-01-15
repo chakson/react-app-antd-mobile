@@ -1,6 +1,6 @@
-## run dev
+## 开发模式
 `yarn start` or `npm run start`
-## run build
+## 生产模式
 `yarn build` or `npm run build`
-## run serve
+## 预览
 `serve -s build`
