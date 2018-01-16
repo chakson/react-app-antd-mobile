@@ -1,17 +1,65 @@
 import React, { Component } from 'react';
-import logo from '../static/images/demo.jpg';
+import banner from '../static/images/banner.jpg';
 
 class HomePage extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      bannerHeight: 'auto',
+      sectionHeight: 'auto'
+    };
+  }
+  componentWillMount() {
+    console.log(document.body.clientWidth)
+    const bWidth = document.body.clientWidth;
+    const bHeight = bWidth / 2.5;
+    const vHeight = document.documentElement.clientHeight;
+    const sHeight = (vHeight - bHeight) / 3;
+    this.setState({
+      bannerHeight: bHeight,
+      sectionHeight: sHeight,
+    });
+  }
   render() {
+    console.log(this.state)
+    const { bannerHeight, sectionHeight } = this.state;
+    const bannerStyle = {
+      height: bannerHeight + 'px'
+    };
+    const sectionStyle = {
+      height: sectionHeight + 'px'
+    }
     return (
       <div className="homepage">
-        <header>
-          <img src={logo} alt="logo" />
-          <h1>Welcome to React</h1>
+        <header style={bannerStyle}>
+          <img src={banner} alt="banner" />
         </header>
-        <p>
-          To get started, edit <code>src/HomePage.js</code> and save to reload.
-        </p>
+        <div className="index-content clearfix">
+          <section style={sectionStyle}>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+          <section style={sectionStyle}>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+          <section style={sectionStyle}>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+          <section>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+          <section>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+          <section>
+            <i className="iconfont icon-shouyinzhongxin"></i>
+            <p>我的</p>
+          </section>
+        </div>
       </div>
     );
   }

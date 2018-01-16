@@ -3,11 +3,13 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.homepage {
-  h1,p {
-    text-align: center;
-  }
-  img {
-    max-width: 100%;
-  }
+// 清除浮动
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
+@import './iconfont/iconfont.css';
+@import './style/login.less';
