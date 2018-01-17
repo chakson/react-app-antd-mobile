@@ -12,9 +12,29 @@
   }
 }
 .index-content {
-  section {
-    width: 50%;
-    float: left;
-    height: 33.33%;
+  .index-item-section {
+    padding: 10px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    i {
+      flex: 2;
+      font-size: 50px;
+    }
+    .index-item-text {
+      flex: 3;
+      color: #888;
+      font-size: 14px;
+      h3 {
+        margin: 0;
+        text-align: left;
+        color: #484848;
+      }
+      p {
+        margin: 10px 0 0;
+        text-align: left;
+      }
+    }
   }
 }

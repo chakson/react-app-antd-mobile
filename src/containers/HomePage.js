@@ -8,7 +8,7 @@ class HomePage extends Component {
     this.state = {
       bannerHeight: 'auto',
       contentHeight: 'auto',
-      bannerData: ['1', '2', '3'],
+      bannerData: ['IJOtIlfsYdTyaDTRVrLI', 'AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn'],
     };
   }
   componentWillMount() {
@@ -16,9 +16,6 @@ class HomePage extends Component {
   }
   componentDidMount() {
     window.addEventListener('resize', this.onIndexPageInit);
-    this.setState({
-      bannerData: ['IJOtIlfsYdTyaDTRVrLI', 'AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn'],
-    });
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onIndexPageInit);
@@ -36,15 +33,19 @@ class HomePage extends Component {
   render() {
     const { bannerHeight, contentHeight, bannerData } = this.state;
     const contentStyle = {
-      height: contentHeight + 'px'
+      height: contentHeight + 'px',
     };
     const itemStyle = {
-      height: (contentHeight / 3) + 'px'
-    }
-    const itemData = Array.from(new Array(6)).map((_val, i) => ({
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-      text: `name${i}`,
-    }));
+      height: (contentHeight / 3) + 'px',
+    };
+    const itemData = [
+      { icon: "iconfont icon-shouyinzhongxin", text: "收银", description: '今日收银统计', iconColor: '#f5842b', fontSize: '60px' },
+      { icon: "iconfont icon-shangpinguanli", text: "我的商品" , description: '秤储存商品码', iconColor: '#f65b6c', fontSize: '48px' },
+      { icon: "iconfont icon-tongji", text: "销售统计" , description: '年月日销售情况', iconColor: '#01c0dc', fontSize: '50px' },
+      { icon: "iconfont icon-jianyi", text: "秤砣儿建议" , description: '销售建议', iconColor: '#30c55f', fontSize: '50px' },
+      { icon: "iconfont icon-shebeipeizhi", text: "我的设备" , description: '电子秤绑定', iconColor: '#cddc39', fontSize: '50px' },
+      { icon: "iconfont icon-zhanghaoguanli", text: "我的账号" , description: '查看账号信息', iconColor: '#4aa1fe', fontSize: '48px' },
+    ];
     return (
       <div className="homepage">
         <header>
@@ -78,6 +79,15 @@ class HomePage extends Component {
             data={itemData}
             columnNum={2}
             itemStyle={itemStyle}
+            renderItem={dataItem => (
+              <section className="index-item-section">
+                <i className={dataItem.icon} style={{ color: dataItem.iconColor, fontSize: dataItem.fontSize }}></i>
+                <div className="index-item-text">
+                  <h3>{dataItem.text}</h3>
+                  <p>{dataItem.description}</p>
+                </div>
+              </section>
+            )}
           />
         </div>
       </div>

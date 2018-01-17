@@ -7,6 +7,7 @@ import createHistory from 'history/createBrowserHistory';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 import './static/common.less';
+import LoginPage from './containers/LoginPage';
 import HomePage from './containers/HomePage';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -24,7 +25,8 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/homepage" component={HomePage} />
       </Switch>
     </ConnectedRouter>
   </Provider>
