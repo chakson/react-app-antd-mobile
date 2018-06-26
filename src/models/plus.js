@@ -6,7 +6,6 @@ export default {
   state: 0,
   reducers: {
     addBy(state, payload) {
-      console.log(state, payload, 54545)
       return state + payload
     }
   },
