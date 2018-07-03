@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/img/logo.svg';
 import { Button } from 'antd-mobile';
 import Count from './Count';
 import Plus from './Plus';
