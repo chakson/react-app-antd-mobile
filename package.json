@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
+    "react-app-rewire-less": "^2.1.2",
     "react-app-rewired": "^1.4.0"
   }
 }

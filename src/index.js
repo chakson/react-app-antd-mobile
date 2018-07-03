@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { init } from "@rematch/core";
 import * as models from './models/index';
-import './assets/css/index.css';
+import './assets/style.less';
 import registerServiceWorker from './registerServiceWorker';
 
 import App from './containers/App';
